@@ -1,13 +1,13 @@
-# cloudflare-workers-cors
+# Cloudflare Workers CORS
 
-[![ddns](https://img.shields.io/badge/LICENSE-BSD3%20Clause%20Liscense-brightgreen?style=flat-square)](https://raw.githubusercontent.com/fernvenue/cloudflare-workers-cors/master/LICENSE)
+[![ddns](https://img.shields.io/badge/LICENSE-BSD3%20Clause%20Liscense-yellow?style=flat-square)](./LICENSE)
 
 **Simple CORS reverse proxy on Cloudflare Workers.**
 
 For more information about workers please visit [Cloudflare Workers](https://workers.cloudflare.com).
 
 
-## For any resource
+## For any resources
 
 After enabled, just paste the link to the end of the address.
 
@@ -19,4 +19,4 @@ Now you can access to the resources by Cloudflare Workers, even if you use the *
 
 You can use `page.js` to reverse proxy a site completely and access it through Cloudflare Workers.
 
-Can **NOT** be use to special actions such as login.
+Can **NOT** be used to login.
