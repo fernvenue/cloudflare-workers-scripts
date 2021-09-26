@@ -1,22 +1,69 @@
-# Cloudflare Workers CORS
+# Cloudflare Workers Scripts
 
 [![ddns](https://img.shields.io/badge/LICENSE-BSD3%20Clause%20Liscense-yellow?style=flat-square)](./LICENSE)
 
-**Simple CORS reverse proxy on Cloudflare Workers.**
+**A collection of simple scripts for Cloudflare Workers.**
 
-For more information about workers please visit [Cloudflare Workers](https://workers.cloudflare.com).
+For more information about **Workers** please visit [Cloudflare Workers](https://workers.cloudflare.com).
 
+## Reverse proxy for any resource
 
-## For any resources
+Paste the contents of [`main.js`](https://raw.githubusercontent.com/fernvenue/cloudflare-workers/master/main.js) into the Script on the left in the Cloudflare Workers Dashboard.
 
-After enabled, just paste the link to the end of the address.
+If you need to request `https://example.com/example.js` now I can get it through `https://...workers.dev/https://example.com/example.js`. This applies to any resource on the Internet, even when you are using an **IPv6-Only** network.
 
-`https://...workers.dev/https://raw.githubusercontent.com/fernvenue/cloudflare-workers-cors/master/main.js`
+## Reverse proxy for a single complete site
 
-Now you can access to the resources by Cloudflare Workers, even if you use the **IPv6-Only** network.
+Paste the contents of [`page.js`](https://raw.githubusercontent.com/fernvenue/cloudflare-workers/master/page.js) into the Script on the left in the Cloudflare Workers Dashboard.
 
-## For a single complete site
+### Precautions
 
-You can use `page.js` to reverse proxy a site completely and access it through Cloudflare Workers.
+You must edit the following items in `page.js`:
 
-Can **NOT** be used to login.
+```
+const upstream = 'example.com'
+const upstream_path = '/'
+const upstream_mobile = 'example.com'
+const blocked_region = []
+const blocked_ip_address = []
+const https = true
+const disable_cache = false
+const replace_dict = {
+    '$upstream': '$custom_domain',
+    '//example.com': ''
+}
+```
+
+This reverse proxy cannot be used for login.
+
+## Bulk redirect for host
+
+Paste the contents of [`redirect-hostmap.js`](https://raw.githubusercontent.com/fernvenue/cloudflare-workers/master/redirect-hostmap.js) into the Script on the left in the Cloudflare Workers Dashboard.
+
+You can specify the origin and target in the hostmap:
+
+```
+const redirectMap = new Map([
+  ["www.example.com",   "https://example.com"],
+  ["m.example.com",     "https://example.com"],
+])
+```
+
+## Bulk redirect for path
+
+Paste the contents of [`redirect-pathmap.js`](https://raw.githubusercontent.com/fernvenue/cloudflare-workers/master/redirect-pathmap.js) into the Script on the left in the Cloudflare Workers Dashboard.
+
+You can specify the origin and target in the pathmap:
+
+```
+const redirectMap = new Map([
+  ["/",          "https://example.com"],
+  ["/www",   "https://www.example.com"],
+])
+```
+
+## For more information
+
+- Workers Docs: https://developers.cloudflare.com/workers
+- Workers Examples: https://developers.cloudflare.com/workers/examples
+- Workers Proxy: https://github.com/fajarFWD/workersproxy
