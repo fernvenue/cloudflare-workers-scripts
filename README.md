@@ -10,13 +10,13 @@ For more information about **Workers** please visit [Cloudflare Workers](https:/
 
 ## Reverse proxy for any resource
 
-Paste the contents of [`main.js`](https://raw.githubusercontent.com/fernvenue/cloudflare-workers/master/main.js) into the Script on the left in the Cloudflare Workers Dashboard.
+Paste the contents of [`reverse-cors.js`](https://raw.githubusercontent.com/fernvenue/cloudflare-workers/master/reverse-cors.js) into the Script on the left in the Cloudflare Workers Dashboard.
 
 If you need to request `https://example.com/example.js` now you can also get it on `https://...workers.dev/https://example.com/example.js`. This applies to any resource on the Internet, even when you are using an **IPv6-Only** network.
 
 ## Reverse proxy for a single complete site
 
-Paste the contents of [`page.js`](https://raw.githubusercontent.com/fernvenue/cloudflare-workers/master/page.js) into the Script on the left in the Cloudflare Workers Dashboard.
+Paste the contents of [`reverse-site.js`](https://raw.githubusercontent.com/fernvenue/cloudflare-workers/master/reverse-site.js) into the Script on the left in the Cloudflare Workers Dashboard.
 
 ### Precautions
 
