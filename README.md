@@ -2,6 +2,8 @@
 
 [![ddns](https://img.shields.io/badge/LICENSE-BSD3%20Clause%20Liscense-yellow?style=flat-square)](./LICENSE)
 
+[README](./README.md) | [中文說明](./README_zh.md)
+
 **A collection of simple scripts for Cloudflare Workers.**
 
 For more information about **Workers** please visit [Cloudflare Workers](https://workers.cloudflare.com).
