@@ -62,6 +62,14 @@ const redirectMap = new Map([
 ])
 ```
 
+## Geolocation data as application/json
+
+Paste the contents of [`geo.js`](https://raw.githubusercontent.com/fernvenue/cloudflare-workers/master/geo.js) into the Script on the left in the Cloudflare Workers Dashboard.
+
+Locate user by Cloudflare and return back to the user as `application/json`.
+
+- Demo: https://api.fernvenue.com
+
 ## For more information
 
 - Workers Docs: https://developers.cloudflare.com/workers
