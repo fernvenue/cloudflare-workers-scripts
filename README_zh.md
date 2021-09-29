@@ -8,13 +8,13 @@
 
 ## 對任意資源的反向代理
 
-拷貝 [`main.js`](https://raw.githubusercontent.com/fernvenue/cloudflare-workers/master/main.js) 中的內容至 Cloudflare Workers 面板左側的腳本框並保存.
+拷貝 [`reverse-cors.js`](https://raw.githubusercontent.com/fernvenue/cloudflare-workers/master/reverse-cors.js) 中的內容至 Cloudflare Workers 面板左側的腳本框並保存.
 
 此時當你需要請求 `https://example.com/example.js` 時可以透過 `https://...workers.dev/https://example.com/example.js`. 這對於任意資源都有效, 即使你正在使用 IPv6-Only 的網路.
 
 ## 對單個整站的反向代理
 
-拷貝 [`page.js`](https://raw.githubusercontent.com/fernvenue/cloudflare-workers/master/page.js) 中的內容至 Cloudflare Workers 面板左側的腳本框並保存.
+拷貝 [`reverse-site.js`](https://raw.githubusercontent.com/fernvenue/cloudflare-workers/master/reverse-site.js) 中的內容至 Cloudflare Workers 面板左側的腳本框並保存.
 
 ### 注意事項
 
