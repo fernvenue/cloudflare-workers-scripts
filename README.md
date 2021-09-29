@@ -1,4 +1,4 @@
-# Cloudflare Workers Scripts
+# Workers Scripts
 
 [![ddns](https://img.shields.io/badge/LICENSE-BSD3%20Clause%20Liscense-yellow?style=flat-square)](./LICENSE)
 
