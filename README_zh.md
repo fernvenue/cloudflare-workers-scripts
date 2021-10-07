@@ -62,6 +62,12 @@ const redirectMap = new Map([
 ])
 ```
 
+## 返回用戶公網地址
+
+拷貝 [`ip.js`](https://raw.githubusercontent.com/fernvenue/cloudflare-workers/master/ip.js) 中的內容至 Cloudflare Workers 面板左側的腳本框並保存.
+
+用於以 `text/plain` 格式返回用戶用於連接時的公網 IP 地址, 用戶可以在 `hosts` 中編輯 Workers 對應域的解析結果來限制連接方式為 IPv4 或 IPv6.
+
 ## 返回用戶位置信息
 
 拷貝 [`geo.js`](https://raw.githubusercontent.com/fernvenue/cloudflare-workers/master/geo.js) 中的內容至 Cloudflare Workers 面板左側的腳本框並保存.
