@@ -64,6 +64,12 @@ const redirectMap = new Map([
 ])
 ```
 
+## Return public IP as text/plain
+
+Paste the contents of [`ip.js`](https://raw.githubusercontent.com/fernvenue/cloudflare-workers/master/ip.js) into the Script on the left in the Cloudflare Workers Dashboard.
+
+Return the public IP address used by the user as `text/plain`.  Users can edit the Workers domain resolution in `hosts` file to limit IPv4 or IPv6 connections.
+
 ## Geolocation data as application/json
 
 Paste the contents of [`geo.js`](https://raw.githubusercontent.com/fernvenue/cloudflare-workers/master/geo.js) into the Script on the left in the Cloudflare Workers Dashboard.
