@@ -1,6 +1,9 @@
 # Cloudflare Workers Scripts
 
-[![ddns](https://img.shields.io/badge/LICENSE-BSD3%20Clause%20Liscense-orange?style=flat-square)](./LICENSE)
+[![cloudflare-workers-scripts](https://img.shields.io/badge/LICENSE-BSD3%20Clause%20Liscense-blue?style=flat-square)](./LICENSE)
+[![cloudflare-workers-scripts](https://img.shields.io/badge/Cloudflare%20Workers-Documentation-orange?style=flat-square&logo=cloudflare)](https://developers.cloudflare.com/workers/)
+[![cloudflare-workers-scripts](https://img.shields.io/badge/GitHub-Cloudflare%20Workers%20Scripts-blueviolet?style=flat-square&logo=github)](https://github.com/fernvenue/cloudflare-workers-scripts)
+[![cloudflare-workers-scripts](https://img.shields.io/badge/GitLab-Cloudflare%20Workers%20Scripts-orange?style=flat-square&logo=gitlab)](https://gitlab.com/fernvenue/cloudflare-workers-scripts)
 
 [README](./README.md) | [中文說明](./README_zh.md)
 
