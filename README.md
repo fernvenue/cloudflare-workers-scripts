@@ -1,7 +1,6 @@
 # Cloudflare Workers Scripts
 
 [![cloudflare-workers-scripts](https://img.shields.io/badge/LICENSE-BSD3%20Clause%20Liscense-blue?style=flat-square)](./LICENSE)
-[![cloudflare-workers-scripts](https://img.shields.io/badge/Cloudflare-Workers-orange?style=flat-square&logo=cloudflare)](https://workers.cloudflare.com)
 [![cloudflare-workers-scripts](https://img.shields.io/badge/GitHub-Cloudflare%20Workers%20Scripts-blueviolet?style=flat-square&logo=github)](https://github.com/fernvenue/cloudflare-workers-scripts)
 [![cloudflare-workers-scripts](https://img.shields.io/badge/GitLab-Cloudflare%20Workers%20Scripts-orange?style=flat-square&logo=gitlab)](https://gitlab.com/fernvenue/cloudflare-workers-scripts)
 
