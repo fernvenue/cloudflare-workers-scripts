@@ -80,6 +80,12 @@ Locate user by Cloudflare and return back to the user as `application/json`.
 
 - Demo: https://api.fernvenue.com/me
 
+## Unified management of crawler rules
+
+Paste the contents of [`robots.js`](./robots.js) into the Script on the left in the Cloudflare Workers Dashboard. Then you can select your domain name on Cloudflare dashboard, and enter the **Workers - HTTP Routes** to route all requests (like `*example.com/robots.txt`) for `robots.txt` to this Workers to achieve unified configuration and management of `robots.txt`.
+
+- Demo: https://api.fernvenue.com/robots.txt
+
 ## For more information
 
 - Cloudflare Workers Docs: https://developers.cloudflare.com/workers

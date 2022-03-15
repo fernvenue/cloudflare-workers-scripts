@@ -80,6 +80,12 @@ const redirectMap = new Map([
 
 - 實例: https://api.fernvenue.com/me
 
+## 對爬蟲規則文件統一管理
+
+拷貝 [`robots.js`](./robots.js) 中的內容至 Cloudflare Workers 面板左側的腳本框並保存, 然後在 Cloudflare 面板中選擇對應域名, 並進入 **Workers - HTTP Routes** 中像 `*example.com/robots.txt` 這樣將所有針對 `robots.txt` 的訪問都路由到這一 Workers 從而實現對這一規範文件的統一配置和管理.
+
+- 實例: https://api.fernvenue.com/robots.txt
+
 ## 更多訊息
 
 - Cloudflare Workers 官方文檔: https://developers.cloudflare.com/workers
