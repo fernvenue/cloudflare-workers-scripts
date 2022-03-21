@@ -8,6 +8,17 @@
 
 **適用於 [Cloudflare Workers](https://workers.cloudflare.com) 的簡易腳本集合.**
 
+* [對任意資源的反向代理](#對任意資源的反向代理)
+* [對單個整站的反向代理](#對單個整站的反向代理)
+    * [注意事項](#注意事項)
+* [針對域名的批量重新導向](#針對域名的批量重新導向)
+* [針對路徑的批量重新導向](#針對路徑的批量重新導向)
+* [返回用戶公網地址](#返回用戶公網地址)
+* [返回用戶位置信息](#返回用戶位置信息)
+* [對爬蟲規則文件統一管理](#對爬蟲規則文件統一管理)
+* [DNS over HTTPS](#dns-over-https)
+* [更多訊息](#更多訊息)
+
 ## 對任意資源的反向代理
 
 拷貝 [`reverse-cors.js`](./reverse-cors.js) 中的內容至 Cloudflare Workers 面板左側的腳本框並保存.
@@ -85,6 +96,14 @@ const redirectMap = new Map([
 拷貝 [`robots.js`](./robots.js) 中的內容至 Cloudflare Workers 面板左側的腳本框並保存, 然後在 Cloudflare 面板中選擇對應域名, 並進入 **Workers - HTTP Routes** 中像 `*example.com/robots.txt` 這樣將所有針對 `robots.txt` 的訪問都路由到這一 Workers 從而實現對這一規範文件的統一配置和管理.
 
 - 實例: https://api.fernvenue.com/robots.txt
+
+## DNS over HTTPS
+
+拷貝 [`doh.js`](./doh.js) 中的內容至 Cloudflare Workers 面板左側的腳本框並保存.
+
+DNS over HTTPS 服務透過 Cloudflare (或自行指定其他任何上游).
+
+- 實例: https://api.fernvenue.com/dns-query
 
 ## 更多訊息
 

@@ -8,6 +8,17 @@
 
 **A collection of simple scripts for [Cloudflare Workers](https://workers.cloudflare.com).**
 
+* [Reverse proxy for any resource](#reverse-proxy-for-any-resource)
+* [Reverse proxy for a single complete site](#reverse-proxy-for-a-single-complete-site)
+    * [Precautions](#precautions)
+* [Bulk redirect for host](#bulk-redirect-for-host)
+* [Bulk redirect for path](#bulk-redirect-for-path)
+* [Return public IP as text/plain](#return-public-ip-as-textplain)
+* [Geolocation data as application/json](#geolocation-data-as-applicationjson)
+* [Unified management of crawler rules](#unified-management-of-crawler-rules)
+* [DNS over HTTPS](#dns-over-https)
+* [For more information](#for-more-information)
+
 ## Reverse proxy for any resource
 
 Paste the contents of [`reverse-cors.js`](./reverse-cors.js) into the Script on the left in the Cloudflare Workers Dashboard.
@@ -85,6 +96,14 @@ Locate user by Cloudflare and return back to the user as `application/json`.
 Paste the contents of [`robots.js`](./robots.js) into the Script on the left in the Cloudflare Workers Dashboard. Then you can select your domain name on Cloudflare dashboard, and enter the **Workers - HTTP Routes** to route all requests (like `*example.com/robots.txt`) for `robots.txt` to this Workers to achieve unified configuration and management of `robots.txt`.
 
 - Demo: https://api.fernvenue.com/robots.txt
+
+## DNS over HTTPS
+
+Paste the contents of [`doh.js`](./doh.js) into the Script on the left in the Cloudflare Workers Dashboard.
+
+DNS over HTTPS service with Cloudflare (or any other upstream).
+
+- Demo: https://api.fernvenue.com/dns-query
 
 ## For more information
 
