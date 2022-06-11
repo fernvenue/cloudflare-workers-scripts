@@ -14,6 +14,7 @@
 - [Return client info as application/json](./src/return-clint-info.js)
 - [Return client IP as text/plain](./src/return-client-ip.js)
 - [Return client local time as text/plain](./src/return-client-date.js)
+- [Return Cloudflare ray](./src/return-cloudflare-ray.js)
 - [Unified control of robots.txt](./src/robots-control.js)
 
 ## More information
