@@ -23,4 +23,5 @@
 - [Cloudflare Workers](https://workers.cloudflare.com)
 - [Cloudflare Workers documation](https://developers.cloudflare.com/workers)
 - [Cloudflare Workers offical examples](https://developers.cloudflare.com/workers/examples)
+- [Cloudflare Workers runtime APIs](https://developers.cloudflare.com/workers/runtime-apis)
 - [Cloudflare Workers runtime limitations](https://developers.cloudflare.com/workers/platform/limits)
