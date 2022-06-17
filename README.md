@@ -8,6 +8,7 @@
 
 ## List of the scripts
 
+- [Base64 encode/decode](./src/base64-encode-decode.js)
 - [Bulk redirect for host](./src/redirect-by-hostmap.js)
 - [Bulk redirect for path](./src/redirect-by-pathmap.js)
 - [DNS over HTTPS](./src/dns-over-https.js)
