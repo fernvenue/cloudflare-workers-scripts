@@ -12,6 +12,7 @@
 - [Bulk redirect for host](./redirect-by-hostmap.js)
 - [Bulk redirect for path](./redirect-by-pathmap.js)
 - [DNS over HTTPS](./dns-over-https.js)
+- [Forward CSP report to Telegram via bot](./forward-csp-report-to-telegram.js)
 - [Return client info as application/json](./return-client-info.js)
 - [Return client IP as text/plain](./return-client-ip.js)
 - [Return client local time as text/plain](./return-client-date.js)
