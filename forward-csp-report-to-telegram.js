@@ -35,17 +35,29 @@ addEventListener('fetch', function (event) {
   event.respondWith(handleRequest(event.request));
 });
 
+function makeResponse(code, text) {
+  const data = {
+    "code": code,
+    "message": text,
+  };
+  return new Response(JSON.stringify(data), {
+    headers: {
+      "content-type": "application/json;charset=utf-8" },
+    status: code,
+  })
+}
+
 async function handleRequest(request) {
   const contentType = request.headers.get('content-type') || '';
 
   if (!contentType.includes('application/json')) {
-    return new Response("Plase POST JSON data in body.");
+    return makeResponse(400, "Report content is not a valid json.");
   }
 
   const reqBody = await request.json();
   const report = reqBody['csp-report'];
 
-  if (!report) { return new Response("Bad JSON data."); }
+  if (!report) { return makeResponse(400, "Report content is not a valid json."); }
 
   const documentURI = report['document-uri'];
   const referrer = report['referrer'];
@@ -75,12 +87,15 @@ async function handleRequest(request) {
   })
     .then((response) => response.json())
     .then((data) => {
-      success = true;
+      success = data.ok;
       console.log('Success:', data);
     })
     .catch((error) => {
       success = false;
       console.error('Error:', error);
     });
-  return success ? new Response("Report received.") : new Response("Report not received.");
+
+  return success 
+    ? makeResponse(200, "Successfully reported.")
+    : makeResponse(504, "Report not received, channel maybe down.");
 }
