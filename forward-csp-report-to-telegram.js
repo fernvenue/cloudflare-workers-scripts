@@ -37,45 +37,50 @@ addEventListener('fetch', function (event) {
 
 async function handleRequest(request) {
   const contentType = request.headers.get('content-type') || '';
-  if (contentType.includes('application/json')) {
-    const reqBody = await request.json();
-    const report = reqBody['csp-report'];
-    if (report) {
-      const documentURI = report['document-uri'];
-      const referrer = report['referrer'];
-      const blockedURI = report['blocked-uri'];
 
-      const data = {
-        "chat_id": TELEGRAM_CHAT_ID,
-        "parse_mode": "MarkdownV2",
-        "text"
-          : "*CSP Report*\n"
-          + "Document URI: `" + documentURI + "`\n"
-          + "Referrer: `" + referrer + "`\n"
-          + "Blocked URI: `" + blockedURI + "`"
-        ,
-      }
-
-      await fetch('https://api.telegram.org/bot' + TELEGRAM_BOT_TOKEN + '/sendMessage', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log('Success:', data);
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-        });
-
-      return new Response("Report received.");
-    } else {
-      return new Response("Bad JSON data.");
-    }
-  } else {
+  if (!contentType.includes('application/json')) {
     return new Response("Plase POST JSON data in body.");
   }
+
+  const reqBody = await request.json();
+  const report = reqBody['csp-report'];
+
+  if (!report) { return new Response("Bad JSON data."); }
+
+  const documentURI = report['document-uri'];
+  const referrer = report['referrer'];
+  const blockedURI = report['blocked-uri'];
+
+  const msgData = {
+    "parse_mode": "MarkdownV2",
+    "text"
+      : "*CSP Report*\n"
+      + "Document URI: `" + documentURI + "`\n"
+      + "Referrer: `" + referrer + "`\n"
+      + "Blocked URI: `" + blockedURI + "`"
+      + "",
+    "chat_id": TELEGRAM_CHAT_ID,
+  }
+
+  const msgURI = 'https://api.telegram.org/bot' + TELEGRAM_BOT_TOKEN + '/sendMessage';
+  
+  var success = false;
+
+  await fetch(msgURI, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(msgData),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      success = true;
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      success = false;
+      console.error('Error:', error);
+    });
+  return success ? new Response("Report received.") : new Response("Report not received.");
 }
