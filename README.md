@@ -18,6 +18,7 @@
 - [Return client local time as text/plain](./return-client-date.js)
 - [Return Cloudflare ray](./return-cloudflare-ray.js)
 - [Unified control of robots.txt](./robots-control.js)
+- [Steam TOTP](./steam-totp.js)
 
 ## More information
 
